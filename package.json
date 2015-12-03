@@ -3,10 +3,6 @@
   "version": "0.0.0",
   "description": "A command-line tool to easily deploy your current working branch to GitHub Pages.",
   "bin": "cli.js",
-  "files": [
-    "index.js",
-    "cli.js"
-  ],
   "repository": "cvan/ghpages",
   "author": "Chris Van",
   "license": "MIT",
