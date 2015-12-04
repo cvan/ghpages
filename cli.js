@@ -4,6 +4,7 @@
 var fs = require('fs');
 var path = require('path');
 
+var launch = require('opn');
 var meow = require('meow');
 var objectAssign = require('object-assign');
 
@@ -24,10 +25,10 @@ var cli = meow(usage, {
 ghpages(objectAssign({
   repo: cli.input[0],
   path: '.'
-}, cli.flags), function (err) {
+}, cli.flags), function (err, repo) {
   if (err) { throw err; }
   console.log('Published');
   console.log(repo.ghPagesUrl);
-  spawn('open', [repo.ghPagesUrl]);
+  launch(repo.ghPagesUrl);
   process.exit();
 });

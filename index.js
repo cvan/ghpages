@@ -48,16 +48,18 @@ module.exports = function (opts, cb) {
 
   // Reconstruct the URL to the GitHub repo.
   gh.repoUrl = 'git@github.com:' + gh.repopath + '.git';
-  gh.ghpagesUrl = 'https://' + gh.user + '.github.io/' + gh.repo + '/';
+  gh.ghPagesUrl = 'https://' + gh.user + '.github.io/' + gh.repo + '/';
 
   var src = path.join(cwd, opts.path);
 
   console.log('Publishing from %s to %s', src, gh.repoUrl);
 
+  // ghpages.clean();  // Wipe out the checkout from scratch every time in case we change repos.
+
   ghpages.publish(path.join(cwd, opts.path), {
     clone: getCacheDir(gh.user, gh.repo, gh.branch),
     repo: gh.repoUrl,
-    dotfiles: true,
+    dotfiles: false,
     logger: console.log.bind(console)
   }, function (err) {
     cb(err, gh);
