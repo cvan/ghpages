@@ -1,6 +1,6 @@
 {
   "name": "ghpages",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A command-line tool to easily deploy your current working branch to GitHub Pages.",
   "bin": "cli.js",
   "repository": "cvan/ghpages",
