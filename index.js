@@ -15,6 +15,7 @@ function getCacheDir (ghUser, ghRepo, ghBranch) {
 }
 
 module.exports = function (opts, cb) {
+  // TODO: Document this CLI option and probably rename it to `path`.
   var cwd = opts.dir || process.cwd();
 
   // Parse the project's `package.json` so we can use the `repository` key.
@@ -54,7 +55,7 @@ module.exports = function (opts, cb) {
   console.log('Publishing from %s to %s', src, gh.repoUrl);
 
   ghpages.publish(path.join(cwd, opts.path), {
-    clone: getCacheDir(gh.user, gh.repo),
+    clone: getCacheDir(gh.user, gh.repo, gh.branch),
     repo: gh.repoUrl,
     dotfiles: true,
     logger: console.log.bind(console)
