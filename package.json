@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "gh-pages": "^0.6.0",
+    "gitconfiglocal": "^1.0.0",
     "meow": "^3.6.0",
     "object-assign": "^4.0.1",
     "opn": "^3.0.3",
