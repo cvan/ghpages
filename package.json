@@ -23,6 +23,7 @@
     "github-pages",
     "github",
     "deploy",
-    "push"
+    "push",
+    "cli"
   ]
 }
