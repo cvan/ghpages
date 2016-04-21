@@ -18,13 +18,13 @@ var cli = meow(usage, {
     r: 'repo',
     p: 'path',
     d: 'domain',
+    f: 'force',
     h: 'help'
   }
 });
 
 ghpages(objectAssign({
-  repo: cli.input[0],
-  path: '.'
+  repo: cli.input[0]
 }, cli.flags), function (err, repo) {
   if (err) { throw err; }
   console.log('Published');
