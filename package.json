@@ -15,7 +15,7 @@
     "parse-github-url": "^0.2.1"
   },
   "scripts": {
-    "release": "npm login && npm version patch --minor && npm publish && git push --follow-tags"
+    "release": "npm version patch --minor && npm publish && git push --follow-tags"
   },
   "keywords": [
     "ghpages",
