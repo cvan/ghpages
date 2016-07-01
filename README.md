@@ -10,6 +10,7 @@ Usage
   $ ghpages
 
 Options
+  -p, --path    Path (directory to push; defaults to current directory)
   -r, --repo    Repository (GitHub username, GitHub username/repo, full repo URL)
   -d, --domain  Domain name (for `CNAME` to create in GitHub Pages branch)
   -h, --help    Show help
@@ -18,6 +19,7 @@ Examples
   $ ghpages
   $ ghpages cvan
   $ ghpages cvan/blog
+  $ ghpages cvan/blog -p dist
   $ ghpages git@github.com:cvan/blog.git
   $ ghpages -r cvan/blog -d blog.cvan.io
 ```
