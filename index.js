@@ -78,6 +78,12 @@ module.exports = function (opts, cb) {
     // Reconstruct the URL to the GitHub repo.
     gh.repoUrl = 'git@github.com:' + gh.repopath + '.git';
     gh.ghPagesHost = gh.user + '.github.io';
+
+    var CNAME = path.join(cwd, 'CNAME');
+    if (fs.existsSync(CNAME)) {
+      gh.ghPagesUrl = fs.readFileSync(CNAME);
+    }
+
     gh.ghPagesUrl = 'https://' + gh.ghPagesHost + '/';
 
     if (gh.repo === gh.ghPagesHost) {

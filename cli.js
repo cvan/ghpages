@@ -18,7 +18,8 @@ var cli = meow(usage, {
     r: 'repo',
     p: 'path',
     d: 'domain',
-    h: 'help'
+    h: 'help',
+    o: 'open'
   }
 });
 
@@ -29,6 +30,8 @@ ghpages(objectAssign({
   if (err) { throw err; }
   console.log('Published');
   console.log(repo.ghPagesUrl);
-  launch(repo.ghPagesUrl);
+  if (cli.flags.open) {
+    launch(repo.ghPagesUrl);
+  }
   process.exit();
 });
